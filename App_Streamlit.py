@@ -59,11 +59,23 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Header con imagen
-st.markdown('<div class="header-image">', unsafe_allow_html=True)
-st.image("http://oade.lamolina.edu.pe:99/dist/Unalm/img/Logotipo-color.png", 
-         use_container_width =True,
-         caption="Universidad Nacional Agraria La Molina - Proceso de Admisión")
-st.markdown('</div>', unsafe_allow_html=True)
+# Ruta de la imagen local
+IMAGEN_LOCAL = "Logotipo.png"  # Cambia por el nombre de tu archivo
+
+# Header con imagen local
+if os.path.exists(IMAGEN_LOCAL):
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        st.image(IMAGEN_LOCAL, 
+                 use_column_width=True,
+                 caption="Universidad Nacional Agraria La Molina - Proceso de Admisión")
+else:
+    st.warning("⚠️ No se encontró la imagen local. Usando imagen por defecto.")
+    # Opcional: Usar imagen online como respaldo
+    st.image("http://oade.lamolina.edu.pe:99/dist/Unalm/img/Logotipo-color.png", 
+             use_column_width=True,
+             caption="Universidad Nacional Agraria La Molina - Proceso de Admisión")
+
 
 
 
@@ -1930,3 +1942,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
