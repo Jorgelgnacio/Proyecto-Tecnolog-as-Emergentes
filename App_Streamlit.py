@@ -2,9 +2,9 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-import seaborn as sns
 from matplotlib.gridspec import GridSpec
 from io import BytesIO
+import os
 
 # Configuración de la página
 st.set_page_config(
@@ -64,16 +64,16 @@ IMAGEN_LOCAL = "Logotipo.png"  # Cambia por el nombre de tu archivo
 
 # Header con imagen local
 if os.path.exists(IMAGEN_LOCAL):
-    col1, col2, col3 = st.columns([1, 2, 1])
+    col1, col2, col3 =  st.columns([0.5, 9, 0.5])
     with col2:
         st.image(IMAGEN_LOCAL, 
-                 use_column_width=True,
+                 use_container_width =True,
                  caption="Universidad Nacional Agraria La Molina - Proceso de Admisión")
 else:
     st.warning("⚠️ No se encontró la imagen local. Usando imagen por defecto.")
     # Opcional: Usar imagen online como respaldo
     st.image("http://oade.lamolina.edu.pe:99/dist/Unalm/img/Logotipo-color.png", 
-             use_column_width=True,
+             use_container_width =True,
              caption="Universidad Nacional Agraria La Molina - Proceso de Admisión")
 
 
@@ -1942,4 +1942,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
