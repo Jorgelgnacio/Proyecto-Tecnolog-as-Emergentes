@@ -1906,7 +1906,7 @@ def main():
         
         ## Bienvenido/a
         
-        Esta aplicación te permite analizar los datos del proceso de admisión de la Universidad Nacional Agraria La Molina mediante gráficas interactivas.
+        Esta aplicación te permite analizar los datos del proceso de admisión de la Universidad Nacional Agraria La Molina mediante gráficas realizadas con Matplotlib.
         
         ### 📋 Instrucciones:
         1. **Sube tu archivo Excel** usando el panel lateral
@@ -1942,3 +1942,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
